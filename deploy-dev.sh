@@ -1,6 +1,6 @@
 echo Deploy Project
 # docker-compose up -d --force-recreate --build
-
+ls
 # 获取最新版代码
 git pull
 
