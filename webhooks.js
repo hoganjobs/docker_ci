@@ -39,7 +39,7 @@ handler.on('push', function (event) {
         event.payload.repository.name,
         event.payload.ref);
         // 分支判断
-        if(event.payload.ref === 'refs/heads/master'){
+        if(event.payload.ref === 'refs/heads/main'){
             console.log('deploy master..')
             run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
 
