@@ -29,10 +29,10 @@ handler.on('error', function (err) {
 })
 
 
-handler.on('*', function (event) {
-    console.log('Received *', event.payload.action);
-    //   run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
-})
+// handler.on('*', function (event) {
+//     console.log('Received *', event.payload.action);
+//     //   run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
+// })
  
 handler.on('push', function (event) {
     console.log('Received a push event for %s to %s',
@@ -40,9 +40,8 @@ handler.on('push', function (event) {
         event.payload.ref);
         // 分支判断
         if(event.payload.ref === 'refs/heads/main'){
-            console.log('deploy master..')
+            console.log('deploy main..')
             run_cmd('sh', ['./deploy-dev.sh'], function(text){ console.log(text) });
-
         }
 })
 
